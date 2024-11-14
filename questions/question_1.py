@@ -9,6 +9,6 @@ from database.PostgreSQL.postgresql_repository import get_sentences_by_email
 def get_dangerous_sentences_by_email(email):
     result = get_sentences_by_email(email)
     dangerous_sentences = [{'email': e.email, 'sentences': e.sentences} for e in result ]
-    print(dangerous_sentences)
+    return dangerous_sentences
 
 get_dangerous_sentences_by_email('jeremy37@example.org')
