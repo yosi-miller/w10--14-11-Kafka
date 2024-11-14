@@ -13,5 +13,15 @@ def processor_management(email):
     producer.send('save-email-topic', email)
     print(f'Email {email["email"]} sent to save in database')
 
-    dangerous_sentences_checker(email)
+    # Check if the email contains any dangerous sentences
+    print(f'Start check if have any word dangerous in the {email["email"]} sentences')
+    email, hostage_status, explos_status = dangerous_sentences_checker(email)
+
+    if hostage_status or explos_status:
+        save_danger_email = insert_danger_email(email)
+        if hostage_status:
+            producer.send('hostage-email-topic', save_danger_email.id)
+        if explos_status:
+            producer.send('explos-email-topic', save_danger_email.id)
+
     producer.flush() # producer.flush is used to make sure that all messages are sent before closing the producer

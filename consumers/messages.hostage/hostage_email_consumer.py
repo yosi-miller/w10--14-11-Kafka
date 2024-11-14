@@ -5,7 +5,7 @@ from kafka import KafkaConsumer
 from database.mongoDB.repository import insert_email
 
 consumer = KafkaConsumer(
-    'save-email-topic',
+    'hostage-email-topic',
     bootstrap_servers='localhost:9092',
     auto_offset_reset='earliest',
     group_id='email',
@@ -13,13 +13,14 @@ consumer = KafkaConsumer(
     value_deserializer=lambda x: json.loads(x.decode('utf-8'))
     )
 
-print('set up save email consumer')
-for email in consumer:
-    email = email.value
-    print(f"Received email: {email['email']} to save in mongoDB")
+print('set up save email id in hostage table')
+for email_id in consumer:
+    email_id = email_id.value
+    print(f"Received email ID: {email_id} to save in hostage table")
 
-    result = insert_email(email)
+    result = insert_email_id_to_hostage(email_id)
+
 
     if result:
-        print(f'Email: {email['email']} save, insert id {result}')
+        print(f'Email ID: {email_id} save, insert id {result}')
         consumer.commit()
