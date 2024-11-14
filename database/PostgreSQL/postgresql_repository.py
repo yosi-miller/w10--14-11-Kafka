@@ -37,3 +37,6 @@ def insert_explos_email_reference(email_id):
     db_session.commit()
 
     return new_explos_reference.id
+
+def get_sentences_by_email(email):
+    return db_session.query(EmailsModel).filter_by(email=email).all()
