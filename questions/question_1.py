@@ -11,4 +11,6 @@ def get_dangerous_sentences_by_email(email):
     dangerous_sentences = [{'email': e.email, 'sentences': e.sentences} for e in result ]
     return dangerous_sentences
 
-get_dangerous_sentences_by_email('jeremy37@example.org')
+r = get_dangerous_sentences_by_email('jeremy37@example.org')
+
+print(r)

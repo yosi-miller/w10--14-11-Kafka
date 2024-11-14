@@ -1,6 +1,7 @@
 import atexit
 from flask import Flask, request
 from database.PostgreSQL.postgre_sql_connection import DB_URL, init_db
+from database.PostgreSQL.postgresql_repository import get_sentences_by_email
 from database.mongoDB.mongo_repository import get_all_emails
 from producer.producer_management import processor_management, producer
 
@@ -23,6 +24,13 @@ def get_emails():
    processor_management(email)
 
    return {'status': 'ok'}, 200
+
+@app.route('/dangers_sentence/<string:email>', methods=['GET'])
+def dangers_sentence(email):
+   sentence = get_sentences_by_email(email)
+   dangerous_sentences = [' '.join(e.sentences) for e in sentence]
+   return {'sentence': dangerous_sentences}, 200
+
 
 @atexit.register
 def close_producer():
