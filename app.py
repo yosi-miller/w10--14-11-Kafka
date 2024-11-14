@@ -2,10 +2,18 @@ import atexit
 
 from flask import Flask, request
 
+from database.PostgreSQL.postgre_sql_connection import DB_URL, init_db
 from database.mongoDB.mongo_repository import get_all_emails
 from producer.producer_management import processor_management, producer
 
 app = Flask(__name__)
+
+# Configure SQLAlchemy
+app.config["SQLALCHEMY_DATABASE_URI"] = DB_URL
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+with app.app_context():
+    init_db()
 
 @app.route('/all_emails')
 def all_emails():

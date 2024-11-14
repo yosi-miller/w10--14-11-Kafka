@@ -1,3 +1,5 @@
+from database.PostgreSQL.postgresql_repository import insert_danger_email
+
 e = {
 "email": "jeremy37@example.org",
 "username": "jonesalejandra",
@@ -23,3 +25,6 @@ e = {
 "Natural southern what nice."
 ]
 }
+
+r  = insert_danger_email(e)
+print(r)
