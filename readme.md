@@ -27,6 +27,13 @@ docker-compose up -d
 ```bash
 docker exec -it testpreparationproject-kafka-1 bash
 ```
+- Containers name
+```
+ Container w10--14-11-kafka-db-sql-1                                                                                                                                                                                 1.7s 
+ Container w10--14-11-kafka-mongodb-1                                                                                                                                                                                1.7s 
+ Container w10--14-11-kafka-zookeeper-1                                                                                                                                                                              1.7s 
+ Container w10--14-11-kafka-kafka-1  
+```
 
 ## Kafka actions
 - create the topic (change to the current topic name)
