@@ -1,8 +1,6 @@
 import json
-
 from kafka import KafkaConsumer
-
-from database.mongoDB.mongo_repository import insert_email
+from database.PostgreSQL.postgresql_repository import insert_hostage_email_reference
 
 consumer = KafkaConsumer(
     'hostage-email-topic',
@@ -18,8 +16,7 @@ for email_id in consumer:
     email_id = email_id.value
     print(f"Received email ID: {email_id} to save in hostage table")
 
-    result = insert_email_id_to_hostage(email_id)
-
+    result = insert_hostage_email_reference(email_id)
 
     if result:
         print(f'Email ID: {email_id} save, insert id {result}')

@@ -1,7 +1,5 @@
 import atexit
-
 from flask import Flask, request
-
 from database.PostgreSQL.postgre_sql_connection import DB_URL, init_db
 from database.mongoDB.mongo_repository import get_all_emails
 from producer.producer_management import processor_management, producer

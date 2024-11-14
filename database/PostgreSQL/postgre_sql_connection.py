@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-
 from database.PostgreSQL.models import  *
 
 # TODO: change to the docker port

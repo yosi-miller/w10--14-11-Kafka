@@ -1,7 +1,6 @@
 import json
-
 from kafka import KafkaProducer
-
+from database.PostgreSQL.postgresql_repository import insert_danger_email
 from producer.producer_repository import dangerous_sentences_checker
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092',
@@ -20,8 +19,8 @@ def processor_management(email):
     if hostage_status or explos_status:
         save_danger_email = insert_danger_email(email)
         if hostage_status:
-            producer.send('hostage-email-topic', save_danger_email.id)
+            producer.send('hostage-email-topic', save_danger_email)
         if explos_status:
-            producer.send('explos-email-topic', save_danger_email.id)
+            producer.send('explos-email-topic', save_danger_email)
 
     producer.flush() # producer.flush is used to make sure that all messages are sent before closing the producer
