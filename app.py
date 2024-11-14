@@ -2,7 +2,7 @@ import atexit
 
 from flask import Flask, request
 
-from database.mongoDB.repository import get_all_emails
+from database.mongoDB.mongo_repository import get_all_emails
 from producer.producer_management import processor_management, producer
 
 app = Flask(__name__)

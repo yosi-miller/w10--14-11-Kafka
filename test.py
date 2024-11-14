@@ -1,10 +1,25 @@
-from producer.producer_management import dangerous_sentences_checker
+e = {
+"email": "jeremy37@example.org",
+"username": "jonesalejandra",
+"ip_address": "215.67.111.124",
+"created_at": "2024-10-15T05:29:13.450066",
 
-s: list[str] = {
-    'sentences': ['1 Business ask forward  quality.', '2 Report care actuahostagelly situation.',
-                  '3 During  recently actuahostagelly here interview reality.']
-    }
-r = dangerous_sentences_checker(s)
+"location": {
+"latitude": 8.5478895,
+"longitude": -135.24204,
+"city": "Port Josephburgh",
+"country": "PA"
+},
 
+"device_info": {
+"browser": "Mozilla/5.0",
+"os": "iOS",
+"device_id": "c4a3ce0d-4f4f-4bc9-9e94-b135e32cfe81"
+},
 
-print(r)
+"sentences": [
+"Public quickly spend hear sing.",
+"Difference nothing environmental shake decide.",
+"Natural southern what nice."
+]
+}

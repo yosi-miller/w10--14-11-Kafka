@@ -2,7 +2,7 @@ import json
 
 from kafka import KafkaConsumer
 
-from database.mongoDB.repository import insert_email
+from database.mongoDB.mongo_repository import insert_email
 
 consumer = KafkaConsumer(
     'hostage-email-topic',
