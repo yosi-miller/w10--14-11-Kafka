@@ -14,7 +14,7 @@ def get_popular_word_sentences_by_email(email):
     for e in result:
         sentences = e.sentences
         for sentence in sentences:
-            words.extend(sentence.split())
+            words.extend(word.lower() for word in sentence.split())
 
     counter = collections.Counter(words)
     return counter.most_common()[0]

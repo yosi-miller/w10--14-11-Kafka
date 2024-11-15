@@ -1,9 +1,9 @@
 import atexit
 from flask import Flask, request
 from database.PostgreSQL.postgre_sql_connection import DB_URL, init_db
-from database.PostgreSQL.postgresql_repository import get_sentences_by_email
 from database.mongoDB.mongo_repository import get_all_emails
 from producer.producer_management import processor_management, producer
+from services import get_popular_word_sentences, dangerous_sentences_by_email
 
 app = Flask(__name__)
 
@@ -27,9 +27,15 @@ def get_emails():
 
 @app.route('/dangers_sentence/<string:email>', methods=['GET'])
 def dangers_sentence(email):
-   sentence = get_sentences_by_email(email)
-   dangerous_sentences = [' '.join(e.sentences) for e in sentence]
+   dangerous_sentences = dangerous_sentences_by_email(email)
+
    return {'sentence': dangerous_sentences}, 200
+
+@app.route('/popular_word', methods=['GET'])
+def popular_word():
+   must_popular_word = get_popular_word_sentences()
+
+   return {'word': must_popular_word[0], 'amount': must_popular_word[1]}, 200
 
 
 @atexit.register

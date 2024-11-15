@@ -40,3 +40,6 @@ def insert_explos_email_reference(email_id):
 
 def get_sentences_by_email(email):
     return db_session.query(EmailsModel).filter_by(email=email).all()
+
+def get_all_sentences():
+    return db_session.query(EmailsModel).all()

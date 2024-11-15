@@ -51,5 +51,3 @@ kafka-topics --list --bootstrap-server localhost:9092
 ```bash
 python str_consumer.py
 ```
-
-
