@@ -37,7 +37,6 @@ def popular_word():
 
    return {'word': must_popular_word[0], 'amount': must_popular_word[1]}, 200
 
-
 @atexit.register
 def close_producer():
    producer.close()  # close the producer
