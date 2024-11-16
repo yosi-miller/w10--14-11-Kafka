@@ -37,13 +37,17 @@ pip install Flask
 ```
 
 ## Docker actions
-- to run the docker dependencies
+- to run the docker dependencies (After then change the port database to the cornet ports)
 ```bash
 docker-compose up -d
 ```
-<h3>After then change the port database to the cornet ports</h3>
 
 ___
+<h2>Shows the project flow</h2>
+<img src="readme item/Untitled video - Made with Clipchamp.gif" alt="Alt Text" width="600" />
+
+<h2>Review of the main project components </h2>
+<img src="readme item/review_project.png" alt="Alt Text" width="1000" />
 
 <h2>The main function to found the dangerous words in the sentences emails</h2>
 <img src="readme item/function_dangerous_sentences_checker.png" alt="Alt Text" width="800" />
