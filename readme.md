@@ -51,13 +51,19 @@ ___
 
 <h2>The main function to found the dangerous words in the sentences emails</h2>
 <img src="readme item/function_dangerous_sentences_checker.png" alt="Alt Text" width="800" />
+
 ---
+
 <h2>More common commands</h2>
+
 - access the kafka container bash (change to the current container name)
+
 ```bash
 docker exec -it testpreparationproject-kafka-1 bash
 ```
-- Containers name
+
+- Containers name (Ex.)
+
 ```
  Container w10--14-11-kafka-db-sql-1                                                                                                                                                                                 1.7s 
  Container w10--14-11-kafka-mongodb-1                                                                                                                                                                                1.7s 
