@@ -65,9 +65,9 @@ docker exec -it testpreparationproject-kafka-1 bash
 - Containers name (Ex.)
 
 ```
- Container w10--14-11-kafka-db-sql-1                                                                                                                                                                                 1.7s 
- Container w10--14-11-kafka-mongodb-1                                                                                                                                                                                1.7s 
- Container w10--14-11-kafka-zookeeper-1                                                                                                                                                                              1.7s 
+ Container w10--14-11-kafka-db-sql-1 
+ Container w10--14-11-kafka-mongodb-1                                                                                                                                                                                 
+ Container w10--14-11-kafka-zookeeper-1                                                                                                                                                                               
  Container w10--14-11-kafka-kafka-1  
 ```
 
