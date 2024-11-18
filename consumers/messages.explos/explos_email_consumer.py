@@ -13,6 +13,7 @@ consumer = KafkaConsumer(
     )
 
 print('set up save email id in explos table')
+
 for email_id in consumer:
     email_id = email_id.value
     print(f"Received email ID: {email_id} to save in explos table")
